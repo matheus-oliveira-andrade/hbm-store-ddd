@@ -86,8 +86,9 @@ namespace HBMStore.Catalogo.Domain
             // Assertion concern
             Validacoes.ValidarSeEstaVazio(Nome, $"O campo {nameof(Nome)} do produto não pode estar vazio");
             Validacoes.ValidarSeEstaVazio(Descricao, $"O campo {nameof(Descricao)} do produto não pode estar vazio");
-            Validacoes.ValidarSeEhDiferente(CategoriaId, Guid.Empty, $"O campo {nameof(CategoriaId)} do produto não pode estar vazio");
-            Validacoes.ValidarSeEhMenorIgualMinimo(Valor, 0, $"O campo {nameof(Valor)} do produto não pode ser menor menor ou igual a {0}");
+            Validacoes.ValidarSeEhIgual(CategoriaId, Guid.Empty, $"O campo {nameof(CategoriaId)} do produto não pode estar vazio");
+            Validacoes.ValidarSeEhMenorQue(Valor, 0, $"O campo {nameof(Valor)} do produto não pode ser menor que {0}");
+            Validacoes.ValidarSeEhIgual(Valor, 0, $"O campo {nameof(Valor)} do produto não pode ser igual a {0}");
             Validacoes.ValidarSeEstaVazio(Imagem, $"O campo {nameof(Imagem)} do produto não pode estar vazio");
         }
     }

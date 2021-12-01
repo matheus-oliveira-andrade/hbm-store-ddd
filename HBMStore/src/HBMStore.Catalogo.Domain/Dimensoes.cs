@@ -31,9 +31,9 @@ namespace HBMStore.Catalogo.Domain
         {
             int valorMinimo = 1;
 
-            Validacoes.ValidarSeEhMenorIgualMinimo(Altura, valorMinimo, $"O campo {nameof(Altura)} não pode ser menor ou igual a {valorMinimo}");
-            Validacoes.ValidarSeEhMenorIgualMinimo(Largura, valorMinimo, $"O campo {nameof(Largura)} não pode ser menor ou igual a {valorMinimo}");
-            Validacoes.ValidarSeEhMenorIgualMinimo(Profundidade, valorMinimo, $"O campo {nameof(Profundidade)} não pode ser menor ou igual a {valorMinimo}");
+            Validacoes.ValidarSeEhMenorQue(Altura, valorMinimo, $"O campo {nameof(Altura)} não pode ser menor ou igual a {valorMinimo}");
+            Validacoes.ValidarSeEhMenorQue(Largura, valorMinimo, $"O campo {nameof(Largura)} não pode ser menor ou igual a {valorMinimo}");
+            Validacoes.ValidarSeEhMenorQue(Profundidade, valorMinimo, $"O campo {nameof(Profundidade)} não pode ser menor ou igual a {valorMinimo}");
         }
     }
 }

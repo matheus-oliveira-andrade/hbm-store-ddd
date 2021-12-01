@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace HBMStore.Domain.DomainObjects
 {
@@ -6,7 +7,31 @@ namespace HBMStore.Domain.DomainObjects
     {
         public static void ValidarSeEhIgual(object primeiroObj, object segundoObj, string mensagem)
         {
-            if (primeiroObj != segundoObj)
+            if (primeiroObj == segundoObj)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeEhIgual(int primeiroObj, int segundoObj, string mensagem)
+        {
+            if (primeiroObj.Equals(segundoObj))
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeEhIgual(decimal primeiroObj, decimal segundoObj, string mensagem)
+        {
+            if (primeiroObj.Equals(segundoObj))
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+        public static void ValidarSeEhIgual(Guid primeiroObj, Guid segundoObj, string mensagem)
+        {
+            if (primeiroObj.Equals(segundoObj))
             {
                 throw new DomainException(mensagem);
             }
@@ -14,7 +39,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEhDiferente(object primeiroObj, object segundoObj, string mensagem)
         {
-            if (primeiroObj == segundoObj)
+            if (primeiroObj != segundoObj)
             {
                 throw new DomainException(mensagem);
             }
@@ -66,7 +91,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEstaEntreMinimoMaximo(double valor, double valorMinimo, double valorMaximo, string mensagem)
         {
-            if (valor < valorMinimo || valor > valorMaximo)
+            if (valor >= valorMinimo || valor <= valorMaximo)
             {
                 throw new DomainException(mensagem);
             }
@@ -74,7 +99,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEstaEntreMinimoMaximo(float valor, float valorMinimo, float valorMaximo, string mensagem)
         {
-            if (valor < valorMinimo || valor > valorMaximo)
+            if (valor >= valorMinimo || valor <= valorMaximo)
             {
                 throw new DomainException(mensagem);
             }
@@ -82,7 +107,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEstaEntreMinimoMaximo(int valor, int valorMinimo, int valorMaximo, string mensagem)
         {
-            if (valor < valorMinimo || valor > valorMaximo)
+            if (valor >= valorMinimo || valor <= valorMaximo)
             {
                 throw new DomainException(mensagem);
             }
@@ -90,7 +115,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEstaEntreMinimoMaximo(long valor, long valorMinimo, long valorMaximo, string mensagem)
         {
-            if (valor < valorMinimo || valor > valorMaximo)
+            if (valor >= valorMinimo || valor <= valorMaximo)
             {
                 throw new DomainException(mensagem);
             }
@@ -98,47 +123,47 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEstaEntreMinimoMaximo(decimal valor, decimal valorMinimo, decimal valorMaximo, string mensagem)
         {
-            if (valor < valorMinimo || valor > valorMaximo)
+            if (valor >= valorMinimo || valor <= valorMaximo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeEhMenorIgualMinimo(double valor, double valorMinimo, string mensagem)
+        public static void ValidarSeEhMenorQue(double valor, double valorMinimo, string mensagem)
         {
-            if (valor <= valorMinimo)
+            if (valor < valorMinimo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeEhMenorIgualMinimo(float valor, float valorMinimo, string mensagem)
+        public static void ValidarSeEhMenorQue(float valor, float valorMinimo, string mensagem)
         {
-            if (valor <= valorMinimo)
+            if (valor < valorMinimo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeEhMenorIgualMinimo(int valor, int valorMinimo, string mensagem)
+        public static void ValidarSeEhMenorQue(int valor, int valorMinimo, string mensagem)
         {
-            if (valor <= valorMinimo)
+            if (valor < valorMinimo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeEhMenorIgualMinimo(long valor, long valorMinimo, string mensagem)
+        public static void ValidarSeEhMenorQue(long valor, long valorMinimo, string mensagem)
         {
-            if (valor <= valorMinimo)
+            if (valor < valorMinimo)
             {
                 throw new DomainException(mensagem);
             }
         }
 
-        public static void ValidarSeEhMenorIgualMinimo(decimal valor, decimal valorMinimo, string mensagem)
+        public static void ValidarSeEhMenorQue(decimal valor, decimal valorMinimo, string mensagem)
         {
-            if (valor <= valorMinimo)
+            if (valor < valorMinimo)
             {
                 throw new DomainException(mensagem);
             }
@@ -146,7 +171,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEhFalso(bool flagCondicao, string mensagem)
         {
-            if (flagCondicao)
+            if (!flagCondicao)
             {
                 throw new DomainException(mensagem);
             }
@@ -154,7 +179,7 @@ namespace HBMStore.Domain.DomainObjects
 
         public static void ValidarSeEhVerdadeiro(bool flagCondicao, string mensagem)
         {
-            if (!flagCondicao)
+            if (flagCondicao)
             {
                 throw new DomainException(mensagem);
             }
