@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\HBMStore.Catalogo.Domain\HBMStore.Catalogo.Domain.csproj" />
-    <ProjectReference Include="..\..\src\HBMStore.Domain\HBMStore.Domain.csproj" />
+    <ProjectReference Include="..\..\src\HBMStore.Core\HBMStore.Core.csproj" />
   </ItemGroup>
 
 </Project>

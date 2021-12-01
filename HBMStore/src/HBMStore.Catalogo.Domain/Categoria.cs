@@ -1,4 +1,5 @@
-﻿using HBMStore.Domain.DomainObjects;
+﻿using HBMStore.Core.DomainObjects;
+using System.Collections.Generic;
 
 namespace HBMStore.Catalogo.Domain
 {
@@ -6,6 +7,11 @@ namespace HBMStore.Catalogo.Domain
     {
         public string Nome { get; private set; }
         public int Codigo { get; private set; }
+
+        // EF Relation
+        public ICollection<Produto> Produtos { get; set; }
+
+        protected Categoria() { }
 
         public Categoria(string nome, int codigo)
         {

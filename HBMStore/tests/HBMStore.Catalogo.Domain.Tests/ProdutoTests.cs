@@ -1,4 +1,4 @@
-using HBMStore.Domain.DomainObjects;
+using HBMStore.Core.DomainObjects;
 using System;
 using Xunit;
 

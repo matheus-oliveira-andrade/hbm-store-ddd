@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace HBMStore.Domain.DomainObjects
+namespace HBMStore.Core.DomainObjects
 {
     public class Validacoes
     {

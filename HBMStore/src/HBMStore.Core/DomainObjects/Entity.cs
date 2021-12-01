@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HBMStore.Domain.DomainObjects
+namespace HBMStore.Core.DomainObjects
 {
     public abstract class Entity
     {

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HBMStore.Domain\HBMStore.Domain.csproj" />
+    <ProjectReference Include="..\HBMStore.Core\HBMStore.Core.csproj" />
   </ItemGroup>
 
 </Project>

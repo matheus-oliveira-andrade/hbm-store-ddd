@@ -1,4 +1,4 @@
-﻿using HBMStore.Domain.DomainObjects;
+﻿using HBMStore.Core.DomainObjects;
 
 namespace HBMStore.Catalogo.Domain
 {

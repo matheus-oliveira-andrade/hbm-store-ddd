@@ -1,4 +1,4 @@
-﻿namespace HBMStore.Domain.DomainObjects
+﻿namespace HBMStore.Core.DomainObjects
 {
     public interface IAggregateRoot {}
 }
