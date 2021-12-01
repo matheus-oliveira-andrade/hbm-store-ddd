@@ -13,6 +13,8 @@ namespace HBMStore.Catalogo.Domain
         public string Imagem { get; private set; }
         public int QuantidadeEstoque { get; private set; }
 
+        public Dimensoes Dimensoes { get; private set; }
+
         public Guid CategoriaId { get; private set; }
         public Categoria Categoria { get; private set; }
 
@@ -22,7 +24,8 @@ namespace HBMStore.Catalogo.Domain
                        decimal valor,
                        Guid categoriaId,
                        DateTime dataCadastro,
-                       string imagem)
+                       string imagem,
+                       Dimensoes dimensoes)
         {
             Nome = nome;
             Descricao = descricao;
@@ -31,6 +34,7 @@ namespace HBMStore.Catalogo.Domain
             CategoriaId = categoriaId;
             DataCadastro = dataCadastro;
             Imagem = imagem;
+            Dimensoes = dimensoes;
 
             // Fail fast validation
             Validar();
