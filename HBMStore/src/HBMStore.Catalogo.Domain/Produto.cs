@@ -31,6 +31,9 @@ namespace HBMStore.Catalogo.Domain
             CategoriaId = categoriaId;
             DataCadastro = dataCadastro;
             Imagem = imagem;
+
+            // Fail fast validation
+            Validar();
         }
 
         public void Ativar() => Ativo = true;
@@ -39,12 +42,17 @@ namespace HBMStore.Catalogo.Domain
 
         public void AlterarCategoria(Categoria categoria)
         {
+            Validacoes.ValidarSeEstaNulo(categoria, $"A categoria não pode ser nula");
+
             CategoriaId = Categoria.Id;
             Categoria = categoria;
         }
 
         public void AlterarDescricao(string descricao)
         {
+            Validacoes.ValidarSeEstaVazio(descricao, $"O campo {nameof(descricao)} do produto não pode estar vazio");
+            Validacoes.ValidarSeEstaNulo(descricao, $"O campo {nameof(descricao)} do produto não pode estar nulo");
+
             Descricao = descricao;
         }
 
@@ -52,6 +60,9 @@ namespace HBMStore.Catalogo.Domain
         {
             if (quantidade < 0)
                 quantidade *= -1;
+
+            if (!PossuiEmEstoque(quantidade))
+                throw new DomainException("Estoque insuficiente");
 
             QuantidadeEstoque -= quantidade;
         }
@@ -61,13 +72,19 @@ namespace HBMStore.Catalogo.Domain
             QuantidadeEstoque += quantidade;
         }
 
-        public bool PossuiQuantidadeEmEstoque(int quantidade)
+        public bool PossuiEmEstoque(int quantidade)
         {
             return QuantidadeEstoque >= quantidade;
         }
 
-        public void Validar()
+        private void Validar()
         {
+            // Assertion concern
+            Validacoes.ValidarSeEstaVazio(Nome, $"O campo {nameof(Nome)} do produto não pode estar vazio");
+            Validacoes.ValidarSeEstaVazio(Descricao, $"O campo {nameof(Descricao)} do produto não pode estar vazio");
+            Validacoes.ValidarSeEhDiferente(CategoriaId, Guid.Empty, $"O campo {nameof(CategoriaId)} do produto não pode estar vazio");
+            Validacoes.ValidarSeEhMenorIgualMinimo(Valor, 0, $"O campo {nameof(Valor)} do produto não pode ser menor menor ou igual a {0}");
+            Validacoes.ValidarSeEstaVazio(Imagem, $"O campo {nameof(Imagem)} do produto não pode estar vazio");
         }
     }
 }
