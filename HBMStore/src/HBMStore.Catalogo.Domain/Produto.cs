@@ -18,6 +18,11 @@ namespace HBMStore.Catalogo.Domain
         public Guid CategoriaId { get; private set; }
         public Categoria Categoria { get; private set; }
 
+        protected Produto()
+        {
+
+        }
+
         public Produto(string nome,
                        string descricao,
                        bool ativo,

@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7622C380-7922-4A29-916A-102D719045C5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webApps", "webApps", "{C1324D10-0883-481C-8F94-7C3D40685499}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cadastros", "Cadastros", "{2B15246E-6795-49E0-A74B-F789E9408361}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalogo", "Catalogo", "{BCD0D97A-65E9-4DA8-87B0-E3C3D3D5A109}"
@@ -30,6 +28,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Core", "src\HBMStore.Core\HBMStore.Core.csproj", "{8577093F-C7E6-456C-811B-8F5696AE801A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Catalogo.Application", "src\HBMStore.Catalogo.Application\HBMStore.Catalogo.Application.csproj", "{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{DBD913F3-00A2-4A02-A747-52B3EE0E17FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.WebApps.MVC", "src\HBMStore.WebApps.MVC\HBMStore.WebApps.MVC.csproj", "{5988F60E-36F5-4092-948C-B71C6315E79A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5988F60E-36F5-4092-948C-B71C6315E79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5988F60E-36F5-4092-948C-B71C6315E79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5988F60E-36F5-4092-948C-B71C6315E79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5988F60E-36F5-4092-948C-B71C6315E79A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{19DE401F-B5B4-4B6B-BFAF-2EA1D2C3CAC6} = {BCD0D97A-65E9-4DA8-87B0-E3C3D3D5A109}
 		{8577093F-C7E6-456C-811B-8F5696AE801A} = {5F7DE0B3-4AF1-4278-B789-7CA92957218D}
 		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC} = {BCD0D97A-65E9-4DA8-87B0-E3C3D3D5A109}
+		{5988F60E-36F5-4092-948C-B71C6315E79A} = {DBD913F3-00A2-4A02-A747-52B3EE0E17FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9808B445-4EA3-40F1-B0F0-CE274B5259AC}
