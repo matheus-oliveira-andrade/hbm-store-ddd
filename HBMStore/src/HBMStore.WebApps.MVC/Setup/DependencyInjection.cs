@@ -2,7 +2,9 @@
 using HBMStore.Catalogo.Data;
 using HBMStore.Catalogo.Data.Repository;
 using HBMStore.Catalogo.Domain;
+using HBMStore.Catalogo.Domain.Events;
 using HBMStore.Core.Bus;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HBMStore.WebApps.MVC.Setup
@@ -19,6 +21,7 @@ namespace HBMStore.WebApps.MVC.Setup
             services.AddScoped<IEstoqueService, EstoqueService>();
             services.AddScoped<CatalogoContext>();
 
+            services.AddScoped<INotificationHandler<ProdutoEstoqueBaixoEvent>, ProdutoEventHandler>();
         }
     }
 }

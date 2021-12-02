@@ -7,7 +7,7 @@ namespace HBMStore.Catalogo.Application.ViewModels
     public class ProdutoViewModel
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O preenchimento do campo {0} é obrigatório")]
         public Guid CategoriaId { get; set; }
