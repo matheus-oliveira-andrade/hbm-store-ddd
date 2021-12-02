@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Catalogo.Data", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Core", "src\HBMStore.Core\HBMStore.Core.csproj", "{8577093F-C7E6-456C-811B-8F5696AE801A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Catalogo.Application", "src\HBMStore.Catalogo.Application\HBMStore.Catalogo.Application.csproj", "{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8577093F-C7E6-456C-811B-8F5696AE801A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8577093F-C7E6-456C-811B-8F5696AE801A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8577093F-C7E6-456C-811B-8F5696AE801A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{5F5C772D-28F9-426B-8453-627A94E6DD99} = {3787BEFB-B305-41BB-B3E2-D435208C1E27}
 		{19DE401F-B5B4-4B6B-BFAF-2EA1D2C3CAC6} = {BCD0D97A-65E9-4DA8-87B0-E3C3D3D5A109}
 		{8577093F-C7E6-456C-811B-8F5696AE801A} = {5F7DE0B3-4AF1-4278-B789-7CA92957218D}
+		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC} = {BCD0D97A-65E9-4DA8-87B0-E3C3D3D5A109}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9808B445-4EA3-40F1-B0F0-CE274B5259AC}
