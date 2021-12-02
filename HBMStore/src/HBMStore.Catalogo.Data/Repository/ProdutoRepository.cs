@@ -12,6 +12,11 @@ namespace HBMStore.Catalogo.Data.Repository
     {
         private readonly CatalogoContext _context;
 
+        public ProdutoRepository(CatalogoContext context)
+        {
+            _context = context;
+        }
+
         public IUnitOfWork UnitOfWork => _context;
 
         public void Adicionar(Produto produto)

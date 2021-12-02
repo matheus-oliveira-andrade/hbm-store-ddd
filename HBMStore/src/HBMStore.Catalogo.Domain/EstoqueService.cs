@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HBMStore.Catalogo.Domain.Events;
+using HBMStore.Core.Bus;
+using System;
 using System.Threading.Tasks;
 
 namespace HBMStore.Catalogo.Domain
@@ -6,11 +8,13 @@ namespace HBMStore.Catalogo.Domain
     public class EstoqueService : IEstoqueService
     {
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IMediatrHandle _bus;
 
-        public EstoqueService(IProdutoRepository produtoRepository)
+        public EstoqueService(IProdutoRepository produtoRepository, IMediatrHandle bus)
         {
             _produtoRepository = produtoRepository;
-        }        
+            _bus = bus;
+        }
 
         public async Task<bool> DebitarEstoque(Guid produtoId, int quantidade)
         {
@@ -27,6 +31,11 @@ namespace HBMStore.Catalogo.Domain
             }
 
             produto.DebitarEstoque(quantidade);
+
+            if(produto.QuantidadeEstoque < 10)
+            {
+                await _bus.PublicarEvento(new ProdutoEstoqueBaixoEvent(produto.Id, produto.QuantidadeEstoque));
+            }
 
             _produtoRepository.Atualizar(produto);
             return await _produtoRepository.UnitOfWork.Commit();            
