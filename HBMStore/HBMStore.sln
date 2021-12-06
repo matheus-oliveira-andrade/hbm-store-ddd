@@ -23,15 +23,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3787BEFB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBMStore.Catalogo.Domain.Tests", "tests\HBMStore.Catalogo.Domain.Tests\HBMStore.Catalogo.Domain.Tests.csproj", "{5F5C772D-28F9-426B-8453-627A94E6DD99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Catalogo.Data", "src\HBMStore.Catalogo.Data\HBMStore.Catalogo.Data.csproj", "{19DE401F-B5B4-4B6B-BFAF-2EA1D2C3CAC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBMStore.Catalogo.Data", "src\HBMStore.Catalogo.Data\HBMStore.Catalogo.Data.csproj", "{19DE401F-B5B4-4B6B-BFAF-2EA1D2C3CAC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Core", "src\HBMStore.Core\HBMStore.Core.csproj", "{8577093F-C7E6-456C-811B-8F5696AE801A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBMStore.Core", "src\HBMStore.Core\HBMStore.Core.csproj", "{8577093F-C7E6-456C-811B-8F5696AE801A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Catalogo.Application", "src\HBMStore.Catalogo.Application\HBMStore.Catalogo.Application.csproj", "{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBMStore.Catalogo.Application", "src\HBMStore.Catalogo.Application\HBMStore.Catalogo.Application.csproj", "{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{DBD913F3-00A2-4A02-A747-52B3EE0E17FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.WebApps.MVC", "src\HBMStore.WebApps.MVC\HBMStore.WebApps.MVC.csproj", "{5988F60E-36F5-4092-948C-B71C6315E79A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBMStore.WebApps.MVC", "src\HBMStore.WebApps.MVC\HBMStore.WebApps.MVC.csproj", "{5988F60E-36F5-4092-948C-B71C6315E79A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Vendas.Domain", "src\HBMStore.Vendas.Domain\HBMStore.Vendas.Domain.csproj", "{851394A8-4D28-4D54-979D-593AA1CE0D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Vendas.Application", "src\HBMStore.Vendas.Application\HBMStore.Vendas.Application.csproj", "{B2A20247-D948-412D-8663-E4C3BEDBD9EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMStore.Vendas.Data", "src\HBMStore.Vendas.Data\HBMStore.Vendas.Data.csproj", "{22A36708-0BB0-4901-A57E-7F3B6ACD7056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{5988F60E-36F5-4092-948C-B71C6315E79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5988F60E-36F5-4092-948C-B71C6315E79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5988F60E-36F5-4092-948C-B71C6315E79A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851394A8-4D28-4D54-979D-593AA1CE0D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851394A8-4D28-4D54-979D-593AA1CE0D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851394A8-4D28-4D54-979D-593AA1CE0D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851394A8-4D28-4D54-979D-593AA1CE0D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A20247-D948-412D-8663-E4C3BEDBD9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A20247-D948-412D-8663-E4C3BEDBD9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A20247-D948-412D-8663-E4C3BEDBD9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A20247-D948-412D-8663-E4C3BEDBD9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A36708-0BB0-4901-A57E-7F3B6ACD7056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A36708-0BB0-4901-A57E-7F3B6ACD7056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A36708-0BB0-4901-A57E-7F3B6ACD7056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A36708-0BB0-4901-A57E-7F3B6ACD7056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +99,9 @@ Global
 		{8577093F-C7E6-456C-811B-8F5696AE801A} = {5F7DE0B3-4AF1-4278-B789-7CA92957218D}
 		{E7ECF9DD-E8A4-4711-B658-343B8C8AB0CC} = {BCD0D97A-65E9-4DA8-87B0-E3C3D3D5A109}
 		{5988F60E-36F5-4092-948C-B71C6315E79A} = {DBD913F3-00A2-4A02-A747-52B3EE0E17FA}
+		{851394A8-4D28-4D54-979D-593AA1CE0D14} = {F9281E6B-A117-4680-9209-11A54F45ACFC}
+		{B2A20247-D948-412D-8663-E4C3BEDBD9EE} = {F9281E6B-A117-4680-9209-11A54F45ACFC}
+		{22A36708-0BB0-4901-A57E-7F3B6ACD7056} = {F9281E6B-A117-4680-9209-11A54F45ACFC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9808B445-4EA3-40F1-B0F0-CE274B5259AC}
