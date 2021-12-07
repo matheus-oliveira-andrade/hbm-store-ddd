@@ -5,8 +5,11 @@ using HBMStore.Catalogo.Domain;
 using HBMStore.Catalogo.Domain.Events;
 using HBMStore.Core.Bus;
 using HBMStore.Vendas.Application.Commands;
+using HBMStore.Vendas.Domain;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using HBMStore.Vendas.Data.Repository;
+using HBMStore.Vendas.Data;
 
 namespace HBMStore.WebApps.MVC.Setup
 {
@@ -15,7 +18,7 @@ namespace HBMStore.WebApps.MVC.Setup
         public static void RegisterServices(this IServiceCollection services)
         {
             // Domain bus
-            services.AddScoped<IMediatrHandle, MediatrHandle>();
+            services.AddScoped<IMediatorHandle, MediatorHandle>();
 
             // Catalogo
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
@@ -28,6 +31,9 @@ namespace HBMStore.WebApps.MVC.Setup
 
             // Vendas
             services.AddScoped<IRequestHandler<AdicionarItemPedidoCommand, bool>, PedidoCommandHandler>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
+
+            services.AddScoped<VendasContext>();
         }
     }
 }

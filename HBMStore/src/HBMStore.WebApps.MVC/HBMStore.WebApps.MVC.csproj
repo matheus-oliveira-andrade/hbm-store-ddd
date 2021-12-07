@@ -23,6 +23,7 @@
     <ProjectReference Include="..\HBMStore.Catalogo.Domain\HBMStore.Catalogo.Domain.csproj" />
     <ProjectReference Include="..\HBMStore.Core\HBMStore.Core.csproj" />
     <ProjectReference Include="..\HBMStore.Vendas.Application\HBMStore.Vendas.Application.csproj" />
+    <ProjectReference Include="..\HBMStore.Vendas.Data\HBMStore.Vendas.Data.csproj" />
   </ItemGroup>
 
 </Project>

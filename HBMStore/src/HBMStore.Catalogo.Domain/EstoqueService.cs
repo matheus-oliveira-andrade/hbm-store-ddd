@@ -8,9 +8,9 @@ namespace HBMStore.Catalogo.Domain
     public class EstoqueService : IEstoqueService
     {
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IMediatrHandle _bus;
+        private readonly IMediatorHandle _bus;
 
-        public EstoqueService(IProdutoRepository produtoRepository, IMediatrHandle bus)
+        public EstoqueService(IProdutoRepository produtoRepository, IMediatorHandle bus)
         {
             _produtoRepository = produtoRepository;
             _bus = bus;

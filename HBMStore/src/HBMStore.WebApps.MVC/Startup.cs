@@ -1,5 +1,6 @@
 using HBMStore.Catalogo.Application.AutoMapper;
 using HBMStore.Catalogo.Data;
+using HBMStore.Vendas.Data;
 using HBMStore.WebApps.MVC.Data;
 using HBMStore.WebApps.MVC.Setup;
 using MediatR;
@@ -30,6 +31,10 @@ namespace HBMStore.WebApps.MVC
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<CatalogoContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<VendasContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
