@@ -1,7 +1,6 @@
-﻿using HBMStore.Core.Messages;
-using System;
+﻿using System;
 
-namespace HBMStore.Core.DomainObjects
+namespace HBMStore.Core.Messages.CommomMessages.DomainEvents
 {
     public class DomainEvent : Event
     {

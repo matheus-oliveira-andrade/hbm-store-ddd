@@ -1,4 +1,4 @@
-﻿using HBMStore.Core.DomainObjects;
+﻿using HBMStore.Core.Messages.CommomMessages.DomainEvents;
 using System;
 
 namespace HBMStore.Catalogo.Domain.Events

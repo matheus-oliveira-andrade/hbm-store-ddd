@@ -1,5 +1,5 @@
 ﻿using HBMStore.Catalogo.Application.Services;
-using HBMStore.Core.Bus;
+using HBMStore.Core.Communication.Mediator;
 using HBMStore.Vendas.Application.Commands;
 using Microsoft.AspNetCore.Mvc;
 using System;

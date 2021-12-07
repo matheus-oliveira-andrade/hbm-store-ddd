@@ -1,4 +1,4 @@
-﻿using HBMStore.Core.Bus;
+﻿using HBMStore.Core.Communication.Mediator;
 using HBMStore.Core.Data;
 using HBMStore.Core.Messages;
 using HBMStore.Vendas.Domain;

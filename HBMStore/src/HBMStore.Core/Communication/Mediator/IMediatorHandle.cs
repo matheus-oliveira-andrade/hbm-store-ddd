@@ -1,7 +1,7 @@
 ﻿using HBMStore.Core.Messages;
 using System.Threading.Tasks;
 
-namespace HBMStore.Core.Bus
+namespace HBMStore.Core.Communication.Mediator
 {
     public interface IMediatorHandle
     {

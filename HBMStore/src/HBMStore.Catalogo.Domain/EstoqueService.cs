@@ -1,5 +1,5 @@
 ﻿using HBMStore.Catalogo.Domain.Events;
-using HBMStore.Core.Bus;
+using HBMStore.Core.Communication.Mediator;
 using System;
 using System.Threading.Tasks;
 

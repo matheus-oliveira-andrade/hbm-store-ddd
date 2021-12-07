@@ -2,7 +2,7 @@
 using MediatR;
 using System.Threading.Tasks;
 
-namespace HBMStore.Core.Bus
+namespace HBMStore.Core.Communication.Mediator
 {
     public class MediatorHandle : IMediatorHandle
     {
