@@ -1,6 +1,8 @@
 ﻿using HBMStore.Catalogo.Application.Services;
 using HBMStore.Core.Communication.Mediator;
+using HBMStore.Core.Messages.CommomMessages.Notifications;
 using HBMStore.Vendas.Application.Commands;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -12,11 +14,13 @@ namespace HBMStore.WebApps.MVC.Controllers
         private readonly IProdutoAppService _produtoAppService;
         private readonly IMediatorHandle _mediatrHandle;
 
-        public CarrinhoController(IProdutoAppService produtoAppService, 
-                                 IMediatorHandle mediatrHandle)
+        public CarrinhoController(INotificationHandler<DomainNotification> notification,
+                                  IProdutoAppService produtoAppService,
+                                  IMediatorHandle mediatorHandler)
+                                  : base(notification, mediatorHandler)
         {
             _produtoAppService = produtoAppService;
-            _mediatrHandle = mediatrHandle;
+            _mediatrHandle = mediatorHandler;
         }
 
         public IActionResult Index()
@@ -44,7 +48,12 @@ namespace HBMStore.WebApps.MVC.Controllers
 
             await _mediatrHandle.EnviarComando(command);
 
-            TempData["Erro"] = "Produto indisponível";
+            if (OperacaoValida())
+            {
+                return RedirectToAction("Index", "Vitrine");
+            }
+
+            TempData["Erros"] = ObterMensagensErro();
             return RedirectToAction("ProdutoDetalhe", "Vitrine", new { id });
         }
     }

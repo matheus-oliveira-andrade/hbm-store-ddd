@@ -1,4 +1,6 @@
-﻿using HBMStore.Core.Messages;
+﻿using HBMStore.Core.Communication.Mediator;
+using HBMStore.Core.Messages;
+using HBMStore.Core.Messages.CommomMessages.Notifications;
 using HBMStore.Vendas.Domain;
 using MediatR;
 using System.Linq;
@@ -10,10 +12,12 @@ namespace HBMStore.Vendas.Application.Commands
     public class PedidoCommandHandler : IRequestHandler<AdicionarItemPedidoCommand, bool>
     {
         private readonly IPedidoRepository _pedidoRepository;
+        private readonly IMediatorHandle _mediatorHandler;
 
-        public PedidoCommandHandler(IPedidoRepository pedidoRepository)
+        public PedidoCommandHandler(IPedidoRepository pedidoRepository, IMediatorHandle mediatorHandler)
         {
             _pedidoRepository = pedidoRepository;
+            _mediatorHandler = mediatorHandler;
         }
 
         public async Task<bool> Handle(AdicionarItemPedidoCommand comando, CancellationToken cancellationToken)
@@ -65,7 +69,7 @@ namespace HBMStore.Vendas.Application.Commands
 
             foreach (var erro in command.ValidationResult.Errors)
             {
-                // lançar evento erro
+                _mediatorHandler.PublicarNotificacao(new DomainNotification(command.MessageType, erro.ErrorMessage));
             }
 
             return false;

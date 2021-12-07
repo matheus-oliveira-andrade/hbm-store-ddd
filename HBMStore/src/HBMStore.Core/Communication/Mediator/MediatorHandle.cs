@@ -1,4 +1,5 @@
 ﻿using HBMStore.Core.Messages;
+using HBMStore.Core.Messages.CommomMessages.Notifications;
 using MediatR;
 using System.Threading.Tasks;
 
@@ -21,6 +22,11 @@ namespace HBMStore.Core.Communication.Mediator
         public async Task PublicarEvento<T>(T evento) where T : Event
         {
             await _mediator.Publish(evento);
+        }
+
+        public async Task PublicarNotificacao<T>(T notificacao) where T : DomainNotification
+        {
+            await _mediator.Publish(notificacao);
         }
     }
 }
